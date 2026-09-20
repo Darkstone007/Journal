@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "id": "2026-09-18-before-concept-to-form-materializations",
+      "date": "2026-09-18",
+      "title": "BEFORE — Concept to Form / Materializations",
+      "topics": [
+        "concept",
+        "form",
+        "research",
+        "draft"
+      ],
+      "images": [],
+      "excerpt": "This was the first assignment that properly forced me to stop hiding behind the question. How does someone experience it? Not read it. Not have me explain it. Actually get put…",
+      "published": true
+    },
+    {
       "id": "2026-09-18-after-research",
       "date": "2026-09-18",
       "title": "AFTER — Research",
