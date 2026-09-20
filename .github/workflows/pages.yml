@@ -1,5 +1,7 @@
 # Publishes this folder to GitHub Pages on every push to main.
 # Live URL: https://darkstone007.github.io/Journal/
+#
+# First time: repo Settings → Pages → Source: GitHub Actions
 name: Deploy GitHub Pages
 
 on:
@@ -24,13 +26,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Fetch tree logo
+      - name: Tree mark
         run: |
           mkdir -p assets
-          curl -fsSL -o assets/logo.jpg https://raw.githubusercontent.com/Darkstone007/Portfolio/main/Media/Lo.jpg
+          if [ -f assets/mark.b64 ]; then
+            base64 -d assets/mark.b64 > assets/mark.jpg || true
+          fi
+          curl -fsSL -o assets/logo.jpg https://raw.githubusercontent.com/Darkstone007/Portfolio/main/Media/Lo.jpg || true
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .

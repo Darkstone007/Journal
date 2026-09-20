@@ -1,0 +1,10 @@
+{
+  "id": "opening-the-book",
+  "date": "2026-09-20",
+  "title": "Opening the book",
+  "topics": ["journal", "beginning"],
+  "images": ["assets/mark.svg"],
+  "excerpt": "This journal is the other half of the portfolio — same tree mark, same quiet black, a dull royal purple instead of shine.",
+  "body": "This journal is the other half of the portfolio — same tree mark, same quiet black, a dull royal purple instead of shine.\n\nAnyone may read. Only I write.\n\nTo add the next entry, open /studio/ in this site, unlock it with a GitHub token that can write this repo, fill in a date, a title, topics, images, and the writing, then publish. The public list, the log, and search pick it up from there.",
+  "published": true
+}

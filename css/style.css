@@ -2,15 +2,14 @@
   COLORS AND LAYOUT FOR THE JOURNAL
   =================================
   Palette is matte on purpose — no gloss, no glow, no glass.
-  Black + a dull royal purple, in the same quiet register as the portfolio.
+  Black + a dull royal purple, same quiet register as the portfolio.
 
   Change the values below if you want a different mood.
-  After you save, GitHub Pages will pick it up on the next publish.
 */
 
 :root {
   --ink: #0c0b0e;          /* page background — near-black, not pure #000 */
-  --panel: #141218;        /* cards / header bar */
+  --panel: #141218;        /* cards / fields */
   --line: #2a2433;         /* hairline borders, dull not shiny */
   --paper: #e6e1ea;        /* main text */
   --quiet: #8d8496;        /* secondary text */
@@ -42,7 +41,10 @@ img { max-width: 100%; display: block; }
 a { color: var(--paper); text-underline-offset: 3px; }
 a:hover { color: #cbb8d8; }
 
-/* ----- header ----- */
+button, [role="button"] { cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+
+/* ----- header: tree sits top-left, same as the portfolio ----- */
 .site-header {
   display: flex;
   align-items: center;
@@ -50,7 +52,7 @@ a:hover { color: #cbb8d8; }
   gap: 16px;
   padding: 16px 20px;
   border-bottom: 1px solid var(--line);
-  background: var(--ink);          /* flat — no blur, no shine */
+  background: var(--ink);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -64,15 +66,14 @@ a:hover { color: #cbb8d8; }
   min-width: 0;
 }
 
-/* The tree mark from the portfolio. Round crop, slightly muted. */
 .brand-mark {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid var(--royal-deep);
-  opacity: 0.95;
   flex-shrink: 0;
+  background: #0a090c;
 }
 .brand-mark.small { width: 28px; height: 28px; }
 
@@ -80,11 +81,11 @@ a:hover { color: #cbb8d8; }
 .brand-name { font-weight: 500; letter-spacing: 0.04em; }
 .brand-author { font-size: 12px; color: var(--quiet); }
 
-.nav { display: flex; gap: 8px; }
+.nav { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
 .nav a {
   color: var(--quiet);
   text-decoration: none;
-  padding: 10px 8px;              /* 44px-ish tap height with line */
+  padding: 10px 8px;
   font-size: 14px;
 }
 .nav a:hover,
@@ -97,7 +98,7 @@ a:hover { color: #cbb8d8; }
   padding: 36px 20px 80px;
 }
 
-.intro { margin-bottom: 48px; max-width: 34rem; }
+.intro { margin-bottom: 36px; max-width: 34rem; }
 .eyebrow {
   font-size: 11px;
   letter-spacing: 0.22em;
@@ -125,13 +126,73 @@ a:hover { color: #cbb8d8; }
   text-transform: uppercase;
   color: var(--quiet);
   font-weight: 500;
-  margin-bottom: 8px;
+  margin: 28px 0 8px;
 }
 
 .quiet { color: var(--quiet); }
 
+/* ----- search + topics ----- */
+.toolbar { margin: 8px 0 8px; }
+
+.search {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  background: var(--panel);
+  color: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  font-family: var(--font-ui);
+  font-size: 16px;
+  outline: none;
+}
+.search:focus { border-color: var(--royal); }
+.search::placeholder { color: var(--quiet); }
+
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.topic {
+  appearance: none;
+  background: transparent;
+  color: var(--quiet);
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+  min-height: 40px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.topic:hover { color: var(--paper); border-color: var(--royal-deep); }
+.topic.is-on {
+  color: var(--paper);
+  border-color: var(--royal);
+  background: var(--royal-deep);
+}
+
+.post-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.post-topics span,
+.post-topics a {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--quiet);
+  text-decoration: none;
+}
+
 /* ----- one row in the home list ----- */
-/* Date on top, then title, then images, then excerpt. */
 .post-card {
   display: block;
   padding: 28px 0;
@@ -152,10 +213,9 @@ a:hover { color: #cbb8d8; }
   font-size: 22px;
   font-weight: 500;
   letter-spacing: -0.015em;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
-/* Image strip — empty on purpose until you add files in assets/ */
 .post-images {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -232,6 +292,29 @@ a:hover { color: #cbb8d8; }
 .article-body p { margin-bottom: 1em; }
 .article-body p:last-child { margin-bottom: 0; }
 
+/* ----- log ----- */
+.log-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+.log-item .when {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--royal);
+  padding-top: 3px;
+}
+.log-item .what { color: var(--quiet); }
+.log-item .what a { color: var(--paper); text-decoration: none; }
+.log-item .what a:hover { color: #d4c4e2; }
+
+@media (max-width: 600px) {
+  .log-item { grid-template-columns: 1fr; gap: 4px; }
+}
+
 /* ----- footer ----- */
 .site-footer {
   border-top: 1px solid var(--line);
@@ -250,9 +333,157 @@ a:hover { color: #cbb8d8; }
   font-family: var(--font-body);
 }
 
+/* ----- studio (owner only — not in the public nav) ----- */
+.lock, .studio-form {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 24px;
+  margin-top: 12px;
+}
+.lock h2, .studio-form h2 {
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.lock p, .hint {
+  color: var(--quiet);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.lock ol {
+  color: var(--quiet);
+  padding-left: 18px;
+  margin: 0 0 16px;
+  font-size: 14px;
+}
+.lock li { margin-bottom: 8px; }
+.lock a { color: var(--paper); }
+
+.field { margin-bottom: 16px; }
+.field label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.field input[type="text"],
+.field input[type="password"],
+.field input[type="date"],
+.field textarea {
+  width: 100%;
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--line);
+  padding: 12px 14px;
+  font-family: var(--font-ui);
+  font-size: 16px;
+  outline: none;
+}
+.field textarea {
+  min-height: 220px;
+  font-family: var(--font-body);
+  line-height: 1.6;
+  resize: vertical;
+}
+.field input:focus, .field textarea:focus { border-color: var(--royal); }
+
+.row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 600px) { .row-2 { grid-template-columns: 1fr; } }
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--paper);
+  font-size: 14px;
+  margin: 8px 0 18px;
+}
+.check input { width: 18px; height: 18px; accent-color: var(--royal); }
+
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn {
+  appearance: none;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--paper);
+  font-family: var(--font-ui);
+  font-size: 14px;
+}
+.btn:hover { border-color: var(--royal); }
+.btn-primary {
+  background: var(--royal-deep);
+  border-color: var(--royal);
+}
+.btn-primary:hover { background: var(--royal); }
+.btn-ghost { color: var(--quiet); }
+
+.drop {
+  border: 1px dashed var(--royal-deep);
+  background: var(--ink);
+  padding: 20px;
+  text-align: center;
+  color: var(--quiet);
+  font-size: 14px;
+}
+.drop input { display: block; margin: 10px auto 0; color: var(--paper); }
+.thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+.thumbs img {
+  width: 100%;
+  height: 92px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
+.status {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--quiet);
+  white-space: pre-wrap;
+  font-family: ui-monospace, Menlo, monospace;
+}
+.status.ok { color: #b7c4a3; }
+.status.err { color: #c49a9a; }
+
+.entry-list { margin-top: 32px; }
+.entry-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  cursor: pointer;
+}
+.entry-row:hover .nm { color: #d4c4e2; }
+.entry-row .nm { font-weight: 500; }
+.badge {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--quiet);
+}
+
 @media (max-width: 600px) {
   .intro h1 { font-size: 26px; }
   .article-title { font-size: 26px; }
   .brand-author { display: none; }
   .post-images.single img { height: 180px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
 }

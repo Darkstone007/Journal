@@ -1,62 +1,63 @@
 /*
-  SINGLE POST RENDERER
-  --------------------
-  Looks at ?id= in the URL, finds that post in js/posts.js,
-  and fills in date, title, images, and body.
-  You do not need to edit this unless you want a different layout.
+  SINGLE ENTRY. Loads entries/{id}.json, falls back to the catalog.
 */
-
 (function () {
   const root = document.getElementById("article");
   if (!root) return;
-
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get("id");
-  const posts = typeof POSTS === "undefined" ? [] : POSTS;
-  const post = posts.find(function (p) { return p.id === id; });
-
-  if (!post) {
-    root.innerHTML =
-      '<p class="empty">That entry was not found. <a href="index.html">Back to the journal</a>.</p>';
+  const id = new URLSearchParams(window.location.search).get("id");
+  if (!id) {
+    root.innerHTML = '<p class="empty">No entry selected. <a href="index.html">Back</a>.</p>';
     return;
   }
 
-  document.title = post.title + " · Journal";
+  fetch("entries/" + encodeURIComponent(id) + ".json?t=" + Date.now())
+    .then(function (r) {
+      if (!r.ok) throw new Error("missing");
+      return r.json();
+    })
+    .then(render)
+    .catch(function () {
+      return DZF.loadCatalog().then(function (posts) {
+        const p = posts.filter(function (x) { return x.id === id; })[0];
+        if (!p) throw new Error("missing");
+        render(p);
+      });
+    })
+    .catch(function () {
+      root.innerHTML = '<p class="empty">That entry was not found. <a href="index.html">Back to the journal</a>.</p>';
+    });
 
-  const images = Array.isArray(post.images) ? post.images : [];
-  let imageBlock = "";
-  if (images.length) {
-    imageBlock =
-      '<div class="article-images">' +
-      images.map(function (src) {
-        return '<img src="' + escapeAttr(src) + '" alt="" />';
-      }).join("") +
-      "</div>";
-  } else {
-    imageBlock = '<div class="image-slot" style="height:180px;margin-bottom:28px">No images on this entry yet</div>';
+  function render(post) {
+    if (post.published === false) {
+      root.innerHTML = '<p class="empty">This entry is not published.</p>';
+      return;
+    }
+    document.title = post.title + " \u00b7 Journal";
+    const images = post.images || [];
+    let imageBlock = "";
+    if (images.length) {
+      imageBlock =
+        '<div class="article-images">' +
+        images.map(function (src) {
+          return '<img src="' + DZF.escapeHtml(src) + '" alt="" />';
+        }).join("") +
+        "</div>";
+    }
+    const chips = (post.topics || []).map(function (t) {
+      return '<a class="topic" href="index.html?topic=' + encodeURIComponent(t) + '">' +
+        DZF.escapeHtml(t) + "</a>";
+    }).join("");
+    const paragraphs = String(post.body || "")
+      .split(/\n\n+/)
+      .map(function (p) {
+        return "<p>" + DZF.escapeHtml(p).replace(/\n/g, "<br>") + "</p>";
+      })
+      .join("");
+    root.innerHTML =
+      '<p class="article-date">' + DZF.escapeHtml(DZF.formatDate(post.date)) + "</p>" +
+      '<h1 class="article-title">' + DZF.escapeHtml(post.title) + "</h1>" +
+      (chips ? '<div class="topics" style="margin-bottom:20px">' + chips + "</div>" : "") +
+      imageBlock +
+      '<div class="article-body">' + paragraphs + "</div>";
   }
-
-  const paragraphs = String(post.body || "")
-    .split(/\n\n+/)
-    .map(function (p) { return "<p>" + escapeHtml(p).replace(/\n/g, "<br>") + "</p>"; })
-    .join("");
-
-  root.innerHTML =
-    '<p class="article-date">' + escapeHtml(formatDate(post.date)) + "</p>" +
-    "<h1 class=\"article-title\">" + escapeHtml(post.title) + "</h1>" +
-    imageBlock +
-    '<div class="article-body">' + paragraphs + "</div>";
-
-  function formatDate(iso) {
-    if (!iso) return "";
-    const d = new Date(iso + "T00:00:00");
-    if (isNaN(d.getTime())) return iso;
-    return d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
-  }
-  function escapeHtml(s) {
-    return String(s)
-      .replace(/&/g, "&amp;").replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-  }
-  function escapeAttr(s) { return escapeHtml(s); }
 })();

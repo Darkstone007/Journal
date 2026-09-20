@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="DZF tree mark">
+  <!-- Circular tree mark for the journal: cream tree, matte black field, dull royal-purple ring. -->
+  <rect width="256" height="256" fill="#0c0b0e"/>
+  <circle cx="128" cy="128" r="122" fill="none" stroke="#4a3558" stroke-width="5"/>
+  <circle cx="128" cy="128" r="116" fill="#0a090c"/>
+  <!-- Trunk -->
+  <path fill="#e6d9c4" d="M120 168l4 46h8l4-46z"/>
+  <!-- Canopy — round deciduous silhouette, same idea as Portfolio/Media/Lo.jpg -->
+  <path fill="#e8dcc8" d="M128 40c42 2 74 32 80 70 6 34-12 64-42 74-12 5-48 5-60 0-30-10-48-40-42-74 6-38 38-68 80-70z"/>
+  <path fill="#d9ccb4" opacity=".35" d="M128 58c28 2 50 22 54 48 3 20-8 38-28 44-8 3-32 3-40 0-20-6-31-24-28-44 4-26 26-46 54-48z"/>
+</svg>

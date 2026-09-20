@@ -1,12 +1,7 @@
-# assets
+# Assets
 
-Put photos for your posts in this folder.
+- `mark.svg` / `mark.jpg` — circular cream tree on matte black, dull purple ring.
+  This is the journal’s version of the portfolio tree (`Portfolio/Media/Lo.jpg`).
+- `logo.jpg` — original portfolio tree, kept as fallback.
 
-Then list them in `js/posts.js` like:
-
-```
-images: ["assets/my-photo.jpg"]
-```
-
-The tree logo used in the header is the portfolio mark (`Media/Lo.jpg`).
-You can also drop a copy here as `logo.jpg` if you want a local file.
+Post photos do **not** go here. Upload them from `/studio/` (they land in `entries/images/`).

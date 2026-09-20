@@ -1,0 +1,13 @@
+{
+  "posts": [
+    {
+      "id": "opening-the-book",
+      "date": "2026-09-20",
+      "title": "Opening the book",
+      "topics": ["journal", "beginning"],
+      "images": ["assets/mark.svg"],
+      "excerpt": "This journal is the other half of the portfolio — same tree mark, same quiet black, a dull royal purple instead of shine.",
+      "published": true
+    }
+  ]
+}
