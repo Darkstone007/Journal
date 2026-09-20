@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    SINGLE POST PAGE.
+    Opened as post.html?id=the-post-id
+    You almost never need to edit this file.
+    To change a post's title / date / images / text, edit js/posts.js.
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0c0b0e" />
+  <title>Entry · Journal</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="https://darkstone007.github.io/Portfolio/Media/Lo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="assets/logo.jpg" alt="DZF tree mark"
+           onerror="this.onerror=null;this.src='https://darkstone007.github.io/Portfolio/Media/Lo.jpg'" />
+      <span class="brand-text">
+        <span class="brand-name">Journal</span>
+        <span class="brand-author">David Ziklag Foster</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Entries</a>
+      <a href="https://darkstone007.github.io/Portfolio/" target="_blank" rel="noreferrer">Portfolio</a>
+    </nav>
+  </header>
+
+  <main class="wrap article-wrap">
+    <p class="back"><a href="index.html">← All entries</a></p>
+    <!-- Filled by js/post.js using the id in the URL. -->
+    <article id="article">
+      <p class="quiet">Loading entry…</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <img class="brand-mark small" src="assets/logo.jpg" alt=""
+         onerror="this.onerror=null;this.src='https://darkstone007.github.io/Portfolio/Media/Lo.jpg'" />
+    <p>DZF · matte black / royal purple</p>
+  </footer>
+
+  <script src="js/posts.js"></script>
+  <script src="js/post.js"></script>
+</body>
+</html>

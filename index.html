@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    HOME PAGE of the journal.
+    You almost never need to edit this file.
+    To add a post, edit js/posts.js instead.
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Journal of David Ziklag Foster — notes, stills, and work in progress." />
+  <meta name="theme-color" content="#0c0b0e" />
+  <title>Journal · David Ziklag Foster</title>
+
+  <!-- Matte black + dull royal purple styles. See css/style.css to change colors. -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="https://darkstone007.github.io/Portfolio/Media/Lo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Top bar: tree logo (the portfolio mark) + site name -->
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <!--
+        TREE LOGO — this is Media/Lo.jpg from the portfolio.
+        That round tree mark is the signature on every DZF site.
+        Local copy lives at assets/logo.jpg if you add one.
+      -->
+      <img class="brand-mark" src="assets/logo.jpg" alt="DZF tree mark"
+           onerror="this.onerror=null;this.src='https://darkstone007.github.io/Portfolio/Media/Lo.jpg'" />
+      <span class="brand-text">
+        <span class="brand-name">Journal</span>
+        <span class="brand-author">David Ziklag Foster</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html" aria-current="page">Entries</a>
+      <a href="https://darkstone007.github.io/Portfolio/" target="_blank" rel="noreferrer">Portfolio</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <!-- Intro. Change the sentence here if you want a different tagline. -->
+    <section class="intro">
+      <p class="eyebrow">Personal journal</p>
+      <h1>Notes, stills, and work in progress.</h1>
+      <p class="lede">
+        Anyone may read. Only I write.
+        Signed with the same tree mark as the
+        <a href="https://darkstone007.github.io/Portfolio/" target="_blank" rel="noreferrer">portfolio</a>.
+      </p>
+    </section>
+
+    <!--
+      Post list is filled in by js/app.js from the array in js/posts.js.
+      Each entry shows: DATE, TITLE, IMAGES, and a short excerpt.
+    -->
+    <section>
+      <h2 class="list-heading">Entries</h2>
+      <div id="post-list">
+        <p class="quiet">Loading entries…</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img class="brand-mark small" src="assets/logo.jpg" alt=""
+         onerror="this.onerror=null;this.src='https://darkstone007.github.io/Portfolio/Media/Lo.jpg'" />
+    <p>DZF · matte black / royal purple</p>
+  </footer>
+
+  <!-- posts.js = YOUR CONTENT. app.js = the renderer. Load content first. -->
+  <script src="js/posts.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
