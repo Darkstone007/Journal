@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "id": "2026-09-11-after-curiosity-assignment",
+      "date": "2026-09-11",
+      "title": "AFTER — Curiosity Assignment",
+      "topics": [
+        "assignment",
+        "curiosity",
+        "reflection",
+        "conceptual"
+      ],
+      "images": [],
+      "excerpt": "Looking back at the curiosity work, this is probably where the capstone became more personally mine without me actively trying to make it about the capstone. The AI friend…",
+      "published": true
+    },
+    {
       "id": "2026-09-09-before-curiosity-exercise",
       "date": "2026-09-09",
       "title": "BEFORE — Curiosity Exercise",
