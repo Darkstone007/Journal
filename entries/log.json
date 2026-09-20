@@ -1,6 +1,12 @@
 {
   "events": [
     {
+      "at": "2026-09-20T23:03:11.102Z",
+      "kind": "published",
+      "id": "2026-09-11-after-curiosity-assignment",
+      "title": "AFTER — Curiosity Assignment"
+    },
+    {
       "at": "2026-09-20T22:55:08.198Z",
       "kind": "published",
       "id": "2026-09-09-before-curiosity-exercise",
