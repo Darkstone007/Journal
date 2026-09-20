@@ -233,16 +233,7 @@ button:disabled { cursor: not-allowed; }
 .post-images.single img { height: 220px; }
 
 .image-slot {
-  height: 140px;
-  border: 1px dashed var(--royal-deep);
-  background: var(--panel);
-  color: var(--quiet);
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  display: none;
 }
 
 .post-excerpt {
