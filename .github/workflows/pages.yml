@@ -24,12 +24,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # Pull the tree mark (portfolio Media/Lo.jpg) so the header always has the real logo.
       - name: Fetch tree logo
         run: |
           mkdir -p assets
           curl -fsSL -o assets/logo.jpg https://raw.githubusercontent.com/Darkstone007/Portfolio/main/Media/Lo.jpg
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .
