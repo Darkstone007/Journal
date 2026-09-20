@@ -11,7 +11,7 @@ Matte black + dull royal purple. Tree mark top-left, the same family as the port
 - **Owner studio (bookmark this, not in the public nav):** https://darkstone007.github.io/Journal/studio/
 - **Portfolio (style reference):** https://darkstone007.github.io/Portfolio/
 
-If the live site 404s, turn Pages on once: **Settings → Pages → Source: GitHub Actions** (or Deploy from branch: `main` / `/ (root)`). Then wait a minute.
+Turn the live site on once (takes 15 seconds): repo **Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch `main` / folder `/ (root)` → Save**. After a minute it is at https://darkstone007.github.io/Journal/
 
 ---
 
