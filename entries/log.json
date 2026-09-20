@@ -1,6 +1,12 @@
 {
   "events": [
     {
+      "at": "2026-09-20T22:55:08.198Z",
+      "kind": "published",
+      "id": "2026-09-09-before-curiosity-exercise",
+      "title": "BEFORE — Curiosity Exercise"
+    },
+    {
       "at": "2026-09-20T22:48:02.638Z",
       "kind": "published",
       "id": "2026-09-04-after-draft-capstone-presentation-you-would-have",
