@@ -1,6 +1,12 @@
 {
   "events": [
     {
+      "at": "2026-09-20T23:21:10.959Z",
+      "kind": "published",
+      "id": "2026-09-20-after-concept-to-form",
+      "title": "AFTER — Concept to Form"
+    },
+    {
       "at": "2026-09-20T23:17:06.619Z",
       "kind": "published",
       "id": "2026-09-18-before-concept-to-form-materializations",
