@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-09-16-after-miro-board",
+      "date": "2026-09-16",
+      "title": "AFTER - Miro Board",
+      "topics": [
+        "miro",
+        "reflection",
+        "questions"
+      ],
+      "images": [],
+      "excerpt": "From memory the questions were much simpler: what makes someone human, how much does AI have to become like us before we let it replace things we normally do, and can art reveal…",
+      "published": true
+    },
+    {
       "id": "2026-09-13-before-miro-board-three-questions",
       "date": "2026-09-13",
       "title": "BEFORE — Miro Board: Three Questions",
