@@ -1,6 +1,12 @@
 {
   "events": [
     {
+      "at": "2026-09-20T23:14:50.577Z",
+      "kind": "published",
+      "id": "2026-09-18-after-research",
+      "title": "AFTER — Research"
+    },
+    {
       "at": "2026-09-20T23:11:45.754Z",
       "kind": "published",
       "id": "2026-09-17-before-research-sources",
