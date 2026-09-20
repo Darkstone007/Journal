@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "id": "2026-09-18-after-research",
+      "date": "2026-09-18",
+      "title": "AFTER — Research",
+      "topics": [
+        "research",
+        "reflection",
+        "miro",
+        "draft"
+      ],
+      "images": [],
+      "excerpt": "This part is not deep enough yet. That is probably the most important thing to say about it. I found sources. I organised sources. I can explain why they are relevant. That does…",
+      "published": true
+    },
+    {
       "id": "2026-09-17-before-research-sources",
       "date": "2026-09-17",
       "title": "BEFORE — Research Sources",
