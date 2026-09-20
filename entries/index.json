@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-09-09-before-curiosity-exercise",
+      "date": "2026-09-09",
+      "title": "BEFORE — Curiosity Exercise",
+      "topics": [
+        "assignment",
+        "curiosity",
+        "questions"
+      ],
+      "images": [],
+      "excerpt": "For the curiosity exercise I had to put the capstone aside, which was probably useful because otherwise I would have ended up writing forty versions of the proposal question. The…",
+      "published": true
+    },
+    {
       "id": "2026-09-04-after-draft-capstone-presentation-you-would-have",
       "date": "2026-09-04",
       "title": "AFTER — Draft Capstone Presentation: You Would Have Said That",
