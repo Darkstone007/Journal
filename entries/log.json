@@ -1,6 +1,12 @@
 {
   "events": [
     {
+      "at": "2026-09-20T23:09:24.232Z",
+      "kind": "published",
+      "id": "2026-09-16-after-miro-board",
+      "title": "AFTER - Miro Board"
+    },
+    {
       "at": "2026-09-20T23:06:27.709Z",
       "kind": "published",
       "id": "2026-09-13-before-miro-board-three-questions",
