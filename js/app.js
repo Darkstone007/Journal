@@ -1,5 +1,6 @@
 /*
-  HOME: search, topic chips, dated titled cards with image wells.
+  HOME: search, topic chips, dated titled cards.
+  Photos only render when the entry actually has them.
 */
 (function () {
   const list = document.getElementById("post-list");
@@ -84,7 +85,10 @@
       heading.textContent = topic ? ("Topic  " + topic) : (q ? "Search" : "Entries");
     }
     if (!shown.length) {
-      list.innerHTML = '<p class="empty">Nothing matches. Try another word or topic.</p>';
+      list.innerHTML =
+        !all.length && !q && !topic
+          ? '<p class="empty">No entries yet.</p>'
+          : '<p class="empty">Nothing matches. Try another word or topic.</p>';
       return;
     }
     list.innerHTML = shown.map(card).join("");
@@ -92,7 +96,7 @@
 
   function card(post) {
     const href = "post.html?id=" + encodeURIComponent(post.id);
-    const images = post.images || (post.cover ? [post.cover] : []);
+    const images = (post.images || (post.cover ? [post.cover] : [])).filter(Boolean);
     let imageBlock = "";
     if (images.length) {
       const cls = images.length === 1 ? "post-images single" : "post-images";
@@ -102,8 +106,6 @@
           return '<img src="' + DZF.escapeHtml(src) + '" alt="" />';
         }).join("") +
         "</div>";
-    } else {
-      imageBlock = '<div class="image-slot">Images</div>';
     }
     const chips = (post.topics || []).map(function (t) {
       return "<span>" + DZF.escapeHtml(t) + "</span>";
