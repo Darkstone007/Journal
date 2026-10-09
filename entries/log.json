@@ -1,6 +1,12 @@
 {
   "events": [
     {
+      "at": "2026-10-09T13:36:17.875Z",
+      "kind": "published",
+      "id": "2026-10-09-research-question-update",
+      "title": "Research Question Update"
+    },
+    {
       "at": "2026-09-20T23:21:10.959Z",
       "kind": "published",
       "id": "2026-09-20-after-concept-to-form",
