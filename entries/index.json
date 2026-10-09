@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-10-09-research-question-update",
+      "date": "2026-10-09",
+      "title": "Research Question Update",
+      "topics": [
+        "research",
+        "questions",
+        "capstone"
+      ],
+      "images": [],
+      "excerpt": "My research question has been further refined in a new direction focusing on culture, identity, language, and communication. The reason for the change comes primarily to remove…",
+      "published": true
+    },
+    {
       "id": "2026-09-20-after-concept-to-form",
       "date": "2026-09-20",
       "title": "AFTER — Concept to Form",
