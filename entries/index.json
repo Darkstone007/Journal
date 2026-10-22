@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "id": "2026-10-19-building-meaning-atlas-the-struggles-changes-and",
+      "date": "2026-10-19",
+      "title": "Building Meaning Atlas, the struggles, changes and learning behind the website",
+      "topics": [
+        "meaning atlas",
+        "materialization",
+        "prototype"
+      ],
+      "images": [],
+      "excerpt": "When I started building Meaning Atlas, I already had an idea of what I wanted it to become, a way of showing how words can carry different meanings depending on who is using them,…",
+      "published": true
+    },
+    {
       "id": "2026-10-15-thinking-of-materializations-for-meaning-atlas",
       "date": "2026-10-15",
       "title": "Thinking of materializations for Meaning Atlas",
